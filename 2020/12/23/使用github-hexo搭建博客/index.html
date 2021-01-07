@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>archive_a: 2020/12   | DailyCosmo</title>
+  <title>使用github+hexo搭建博客的过程复盘（全是内心无脑os，谨慎点击）   | DailyCosmo</title>
 
   
     <link rel="apple-touch-icon" href="/images/favicon.png">
@@ -95,64 +95,80 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-    
-      
-        <!-- 第一篇文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="写在2020年跨年之际">
-        <div class="time-m-d">12-31</div>
-        <div class="title">
-          <a href="/2020/12/31/%E5%86%99%E5%9C%A82020%E5%B9%B4%E8%B7%A8%E5%B9%B4%E4%B9%8B%E9%99%85/">
-            <span>写在2020年跨年之际</span>
-          </a>
-        </div>
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">使用github+hexo搭建博客的过程复盘（全是内心无脑os，谨慎点击）</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2020-12-23
+        </span>
+        
       </div>
-    
-      
-      <div class="post-item" title="使用github+hexo搭建博客的过程复盘（全是内心无脑os，谨慎点击）">
-        <div class="time-m-d">12-23</div>
-        <div class="title">
-          <a href="/2020/12/23/%E4%BD%BF%E7%94%A8github-hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
-            <span>使用github+hexo搭建博客的过程复盘（全是内心无脑os，谨慎点击）</span>
-          </a>
-        </div>
+      <div class="markdown-body">
+        <p>刚翻出了我看的关于搭博客的第一篇教程，没有任何背景交待，直接上步骤，也即下载<code>node.js</code> <code>hexo</code> <code>git</code>这三个软件，然后是在github上注册账号。如果说这两步我尚且还能跟着做，那么第三步开始我就彻底进入懵逼状态，因为这一步开始没有我看得懂的截图了，全是黑色底色的代码框框，那个阶段的我还不明白<strong>终端</strong>是个什么东西。其实看到这篇教程的最开始我就发现了问题，那就是我对背景知识一无所知，但是我没有尝试去搜索更详细的内容，而是抱着侥幸心理希望这是一个完美无缺的教程能让我一通傻瓜操作就搭出一个像样的博客。被卡在第三步之后我求助了场外亲友，得到的第一个提醒是你看这篇教程是基于linux的，瞬间我就想到了中学的时候考试，常常因为审题不仔细而丢分，这不，活生生的例子，教程第一行人家大大的关键提醒没有看到。之后场外亲友发我了一些更加清晰的教程，我也终于get到哦原来这事儿有这么多人做过，搜一搜网上全是。于是我开始研究第二篇教程。</p>
+<p>第二篇教程开始的思路是让大家fork他自己的博客代码，然后在此基础上修改，乍一看觉得挺靠谱，开心的把自己之前的repository删了，fork了一个这位博主的。但是马上就遇到了问题，我把fork过来的仓库名改成我自己的名字之后，从<code>账号名.github.io</code>这个链接点进去页面是404，并且收到邮件说CNAME已被使用，这就很让人崩溃了，我完全不明白这是什么意思，而且这才是教程的第二步。在尝试了几次之后我觉得会不会是这个博主的repository的问题，就换了另一个博主fork了一下，结果是一样的。数了数我收到的warning邮件，一共10封。我还一度怀疑是不是我的github账户名称有下划线导致网站链接无法进入，但是收到的warning邮件又不是这个意思，我仍然固执的尝试换了账户名称甚至新建了一个github账户重新尝试了4次，仍旧fail。这时我近乎放弃的随意google想弄明白原因，无意间发现了一个关键思路，可以通过github desktop将下载到本地的博客模板上传到github，再利用github page本身生成主页。于是我按照这样做了，终于从链接<code>账号名.github.io</code>进去并看到了类似博客的网页，虽然格式有点混乱，但这时的我已然无比激动，以为自己已经get到了要点剩下要做的事情就是在这个博主的模板基础上修修补补了。然鹅研究了copy过来的代码之后，发现如果想实现目标我需要学习html等前端知识，于是我找了一个教程开始学前端，同时感到这可能是一个浩大的工程，毕竟那些代码不好读懂，更别提还要自己写。这时的我已经处于放弃的边缘。</p>
+<p>前端的各种知识看到一定程度之后，我终于意识到这可能不是一条正确的道路，重新开始google，这时密集的看教程之后才有了一点概念，原来使用github搭网页常常搭配的<code>hexo</code>和<code>Jekyll</code>都是静态网站生成器，它们之间有怎样的区别，原来网页样式都是有专门的模板可以套用的等等。可以说从这会儿开始我才真正踏上开始搭网站的路。很快我确定了要使用<code>hexo</code>进行搭建，确定了几个看起来比较靠谱的教程同时参考。走上正规之后发现我还是无法避开最开始遇到的那个问题，也即代码框框到底是什么。大部分的教程都没有解释这一点，最多有一个终端页面的完整截图，看了几个截图之后终于发现了终端这个东西以及它的使用方法。这是一个关键节点。知道了终端之后，再遇到问题就比较好搜索了，要不然都不知从何求助起。比如有的操作需要输入密码而终端页面是不显示密码的，有的命令报错的原因等。解决掉这个问题之后，我顺利的检查了之前安装的<code>node</code>和<code>hexo</code>等软件是否有问题，并且无比兴奋的将创建一个博客的命令生成成功，还找到了本地4000访问的办法，无论如何我终于能够看到了一个崭新的由我生成了一篇博客的本地主页。但这之后把本地页面deploy到github的过程出现了问题，教程中安装git的代码我无论如何都运行不成功，并且一开始我其实不太明白这个过程如何用github desktop替代，之后找了一个用desktop的教程，又发现了在<code>config.yml</code>里面的main写成master了，改掉这个之后终于用desktop deploy成功，通过<code>账号名.github.io</code>进去了这个主页，又是一个关键节点。</p>
+<p>下一个任务则是选择合适的主题并更换，这里遇到的困难是明明已经在本地文件夹操作了，’hexo g’却无论如何也不成功。其实这里我看的那篇教程说的非常明白，我失败了几次才发现忽略了需要在<strong>hexo工作区</strong>利用git bash输入hexo g部署主题。一开始我并不懂这个工作区意味着什么所以忽略掉了，后来google了一下发现这就是之前新建博客时有一句’~cd’命令的含义，也即将位置定位到相应某个目录下再执行后面的命令。这一点解决之后，主题得以顺利更换。后面就是一些局部修改配置主题，编辑博客内容的工作。在编辑博客的过程中，我也对hexo本地目录有了更多的了解，以及明白了我最开始看到的别人的博客在github的代码其实并不是敲出来的，是hexo根据我们编辑的内容生成出来的，专门放到那个叫public的文件夹。</p>
+<p>以上，搭建博客的过程絮叨完毕。可以大致把整个过程分为两个阶段，以明白终端是干嘛的为分界。第一个阶段纯粹是还没有入门。目前我觉得这个阶段我的问题在于重结果甚于过程，习惯性的觉得紧迫感很强想快点把这件事情搞定，觉得自己目前用的方法是对的不想花时间寻找其他的路于是习惯性的死磕，其实这样最浪费时间，就应该再去找其他方法；第二个阶段则是入门之后，这个阶段做的好的地方是最开始密集的看了许多教程并进行了对比，思路更加清晰，而遇到的主要问题和第一个阶段有点类似，卡壳时应该尽快否定旧路径改变方法而不是死磕，例如搜其他教程等。至此，复盘完毕，现阶段做个概括的话可以说是不要害怕否定旧方法，后面没有ddl，不要急！</p>
+<p>之所以想把这些碎碎念以如此详细的形式记录并发布出来，是因为这件事情对自己算是有挺大意义。几年前的我是非常抗拒和代码有关的一切的，因为觉得太复杂自己搞不定同时也get不到电脑程序的美。但是这一两年看了一些新闻报道和AI相关的作品，偶然认识了一些突破程序员刻板印象的让我觉得很惊艳的泛IT从业者之后，我的观念也慢慢转变了，对技术产生了好奇甚至是一点崇拜。而搭博客这件小事情，则让我在被吸引之后的好奇的引领下克服了陌生感在不熟悉的领域做成了一件想做的事情，发现了一个不一样的世界，对我而言是一个突破。另外，这个过程某种程度上很像之前在firm工作的时候，目标明确但困难重重且没有人教，我仿佛看到了自己之前应对工作的模式。但是在写复盘的时候有些感觉现在还没有太想清楚，之后遇到类似问题了重新回看，可能会对自己的模式有一些新的认识再来修改。</p>
+
       </div>
-    
       
-      <div class="post-item" title="终于有了属于自己的小地盘">
-        <div class="time-m-d">12-21</div>
-        <div class="title">
-          <a href="/2020/12/21/firstBlog/">
-            <span>终于有了属于自己的小地盘</span>
-          </a>
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2020/12/21/firstBlog/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="Update time"></i>
+              2020-12-23
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2020/12/31/%E5%86%99%E5%9C%A82020%E5%B9%B4%E8%B7%A8%E5%B9%B4%E4%B9%8B%E9%99%85/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
         </div>
-      </div>
-    
       
-      <div class="post-item" title="Hello World">
-        <div class="time-m-d">12-21</div>
-        <div class="title">
-          <a href="/2020/12/21/hello-world/">
-            <span>Hello World</span>
-          </a>
-        </div>
+    </div>
+    
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">
